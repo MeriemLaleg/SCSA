@@ -42,6 +42,8 @@
             <li class="active"><a href="Denoising.html">Denoising</a></li>
             <li><a href="Software.html">Software</a></li>
             <li><a href="Publications.html">Publications</a></li>
+            <li><a href="Patents.html">Patents</a></li>
+            <li><a href="Collaborators.html">Collaborators</a></li>
         </ul>
     </div>
 </nav>
@@ -64,9 +66,37 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <h2>Some important header or so</h2>
-            <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are \(The following\)
-                $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+
+            <h2>C-SCSA</h2>
+            <p>
+                One algorithm to denoise signals developed by Peihao Li and Taous-Meriem Laleg-Kirati that makes use of
+                SCSA is the curvature constrain semi-classical signal analysis (C-SCSA for short) which basically deals
+                with the reconstructed signal curvature as a way to measure its "wigliness" and then use it a a cost
+                function \(J\) to find the value of h which leads to the minumum of \(J\), where J is given by
+            </p>
+
+            <p>
+                $$J=||y_{\delta} - y_h||_2^2 + \mu \int|k(t)|dt$$
+            </p>
+
+            <p>
+                and the curvature is defined as
+                $$k(t) = \frac{|y_h''(t)|}{(1+y_h'(t)^2)^{\frac32}}$$
+            </p>
+
+            <p>
+                Now translated to the discrete domain and an equispaced grid of \(N\) points where
+                $$a = t_1 < t_2 < \quad \cdots \quad < t_{N-1} < t_N = b$$
+            </p>
+
+            <p>
+                Then one can express the minimization problem for J as
+                $$\bar{J} = \sum_{i=1}^N [y_{\delta}(t_1) - y_h(t_i)]^2 + \mu\sum_{i=1}^N k(t_i)$$
+            </p>
+
+            <p>
+                <img src="images/image.png" style="width: 640px; height: 480px" alt="HTML5 Icon">
+            </p>
         </div>
     </div>
 </div>

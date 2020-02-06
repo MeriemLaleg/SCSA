@@ -42,6 +42,8 @@
             <li><a href="Denoising.html">Denoising</a></li>
             <li><a href="Software.html">Software</a></li>
             <li><a href="Publications.html">Publications</a></li>
+            <li><a href="Patents.html">Patents</a></li>
+            <li><a href="Collaborators.html">Collaborators</a></li>
         </ul>
     </div>
 </nav>
@@ -64,9 +66,77 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <h2>Some important header or so</h2>
-            <p>When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are \(The following\)
-                $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+            <h2>Representing a signal using scattering data</h2>
+            <p>At its core SCSA can be understood as an eigenvalue problem for the Schrödinger equation given some
+                constraints for the signal to be represented. Recall the continuous definition of SCSA (for info on this topic
+                please go to the <a href="Theory.html">Theory</a> tab)as the
+                eigenvalue $$-h^2\frac{d^2\psi(t)}{dt^2} - y(t)\psi(t) = \lambda\psi(t)$$
+            </p>
+
+            <p>Where \(h > 0\), \(y(t) \geq 0 \quad \forall t \in \mathbb{R}\). Then \(y(t)\) can be represented by
+                \(y_h(t)\) given by $$y_h(t) = 4h\sum_{n=1}^{N_h} \kappa_{nh} \psi_{nh}^2(t), \quad t \in \mathbb{R} \quad \quad (1)$$
+            </p>
+
+            <p>Now when we want to deal with discrete signals then we have to give a representation of the Schrödinger
+                equation in descrete form. We consider a grid of \(M\) equidistant points \(t_j\), \(j=1,...,M\) such that
+                $$a=t_1 < t_2 < \cdots < t_{M-1} < t_M = b$$
+            </p>
+
+            <p>
+                We denote \(y_j\) and \(\psi_j\) the values of \(y\) and \(\psi\) at the grid points \(t_j\) ,
+                \(j = 1, . . . , M\) $$y_j = y(t_j), \quad \psi_j = \psi(t_j), \quad j=1,...,M$$
+            </p>
+
+            <p>We represent the Schrödinger equation in the discrete space as the following matrix eigenvalue problem
+                $$(-h^2\textbf{D}_2 - diag(\textbf{Y}))\Psi = \lambda\Psi$$
+            </p>
+
+            <p>Where \(\textbf{D}_2\) is the second order differentiation matrix made using fourier psuedo-spectral
+            method and \(diag(\textbf{Y})\) is the diagonal matrix whose elements are \(y_j\), \(j=1,...,M\) and
+                \(\Psi = [\psi_1 \quad \psi_2 \quad \cdots \quad \psi_{M-1} \quad \psi_M]^T\). Then the representation
+                \(y_h\) of \(y\) is as described in (1).
+            </p>
+
+            <h2>Examples</h2>
+            <p>
+                Following there are some examples of functions represented using the SCSA method. Each of the following
+                of 256 data points of the specified function.
+            </p>
+            <p>
+                $$y(t) = cn^2\left(K(m)x| m \right)$$
+                $$K(m) = \int_0^{\frac\pi2} \frac{d\theta}{\sqrt{1-m\sin^2(\theta)}}$$
+            </p>
+
+            <img src="images/cn.gif" style="width: 640px; height: 480px" alt="HTML5 Icon">
+            <img src="images/Figure_1.png" style="width: 640px; height: 480px" alt="HTML5 Icon">
+
+            <p>
+                $$y(t) = e^{-t^2}$$
+            </p>
+
+            <p>
+                <img src="images/exp(x2).gif" style="width: 640px; height: 480px" alt="HTML5 Icon">
+                <img src="images/error_exp2.png" style="width: 640px; height: 480px" alt="HTML5 Icon">
+            </p>
+
+            <p>
+                $$y(t) = e^{-t^2}\cos^2(2\pi t)$$
+            </p>
+
+            <p>
+                <img src="images/exp(x2)cos.gif" style="width: 640px; height: 480px" alt="HTML5 Icon">
+                <img src="images/error_cosexp2.png" style="width: 640px; height: 480px" alt="HTML5 Icon">
+            </p>
+
+            <p>
+                $$y(t) = sign(\sin(2\pi t)) + 1$$
+            </p>
+
+            <p>
+                <img src="images/sign.gif" style="width: 640px; height: 480px" alt="HTML5 Icon">
+                <img src="images/error_sign.png" style="width: 640px; height: 480px" alt="HTML5 Icon">
+            </p>
+
         </div>
     </div>
 </div>

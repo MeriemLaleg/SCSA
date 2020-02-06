@@ -1,20 +1,27 @@
 body {
     text-align: justify;
-    font-family: "Comic Sans MS";
+    font-family: 'Open Sans', "Times New Roman", "Comic Sans MS", Times, Serif;
     font-size: 18px;
     color: #404040;
 }
 
 h1 {
     text-align: center;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', "Times New Roman", "Comic Sans MS", Times, Serif;
     font-weight: 800;
 }
 
 h3 {
     text-align: center;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', "Times New Roman", "Comic Sans MS", Times, Serif;
     font-weight: 300;
+    font-size: 18px;
+}
+
+p h3 {
+    text-align: left;
+    font-family: 'Open Sans', "Times New Roman", "Comic Sans MS", Times, Serif;
+    font-weight: 500;
     font-size: 18px;
 }
 
@@ -26,6 +33,8 @@ p {
 p a {
     text-decoration: underline;
 }
+
+
 
 a {
     color: #404040;

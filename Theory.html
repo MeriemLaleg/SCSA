@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- <meta http-equiv="refresh" content="25"> -->
 
     <!-- Loading mathjax -->
     <script type="text/x-mathjax-config">
@@ -42,6 +43,8 @@
             <li><a href="Denoising.html">Denoising</a></li>
             <li><a href="Software.html">Software</a></li>
             <li><a href="Publications.html">Publications</a></li>
+            <li><a href="Patents.html">Patents</a></li>
+            <li><a href="Collaborators.html">Collaborators</a></li>
         </ul>
     </div>
 </nav>
@@ -64,9 +67,22 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <h2>Some important header or so</h2>
-            <p>When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are \(The following\)
-                $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}.$$</p>
+            <h2>Whats is SCSA?</h2>
+            <p>SCSA is a novel algorithm for signal representation developed by professor
+                <a href="https://www.kaust.edu.sa/en/study/faculty/taous-kirati">Taous-Meriem Laleg-Kirati</a> which is based
+                on the discrete spectrum of a Schrodinger operator to analize signals as follows</p>
+            <h2>Basic principle</h2>
+            <p>Lets consider a signal represented by a real-valued function \(y(t)\), \(t \in \mathbb{R}\) such that for every t the function
+                stays positive then we can define the Scrhodinger operator \(\mathcal{H}_h(y(t))\) as
+                $$ \mathcal{H}_h(y)\psi(t) = -h^2\frac{d^2\psi(t)}{dt^2} - y(t)\psi(t) \quad, \quad \psi(t) \in H^2(\mathbb{R})$$</p>
+            <p>where \(H^2(\mathbb{R})\) denotes the sobolev space of order 2. Fort \(\lambda \leq 0\), we denote \(N_h(\lambda; y)\),
+                the number of eigenvalues of the operator \(\mathcal{H}_h(y)\) below \(\lambda\). It has been proven that there is a
+                non-zero finite number \(N_h = N_h(0:y)\). We denote \(-\kappa_{nh}^2\) the negative eigenvalues of \(\mathcal{H}_h(y)\)
+                with \(\kappa_{nh} > 0\) and \(\kappa_{1h} > \kappa_{2h} > \cdots > \kappa_{nh}\), \(n=1,...,N_h\). Let \(\psi_{nh}\), \(n=1,...,N_h\)
+                be the associated \(L^2\)-normalized eigenfunctions.</p>
+            <p>With the aformentioned we can then represent the signal \(y(t)\) with the discrete spectrum of \(\mathcal{H}_h(y(t))\)
+                as follows
+                $$y_h(t) = 4h\sum_{n=1}^{N_h} \kappa_{nh} \psi_{nh}^2(t), \quad t \in \mathbb{R}$$</p>
         </div>
     </div>
 </div>
